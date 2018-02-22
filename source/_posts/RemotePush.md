@@ -3,10 +3,12 @@ title: iOS 远程推送
 date: 2016-12-22 19:10:15
 tags:
 categories: iOS 推送
+
 ---
 
-###注册
-####iOS 10上
+### 注册
+
+#### iOS 10上
 
 ```
     UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
@@ -27,11 +29,13 @@ categories: iOS 推送
 在iOS10中有一个NotificationCenter，App收到通知都会在NotificationCenter的Delegate中回调，具体下面有两个方法：
 
 当App在前台的时候，当收到推送的时候，会回调到这个方法。
+
 ```
 - (void)userNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(void (^)(UNNotificationPresentationOptions))completionHandler
 ```
 
 在iOS10中最主要的是在前台的情况下，横幅可以展示出来！！！太好了！！！！设置下面的就可以了.
+
 ```
 completionHandler(UNNotificationPresentationOptionBadge|
                   UNNotificationPresentationOptionSound|
@@ -39,6 +43,7 @@ completionHandler(UNNotificationPresentationOptionBadge|
 ```
 
 这个方法是点击通知会回调到这里：无论App在前台或者是后台，无论是本地通知还是远程通知都会回调到这里
+
 `- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler`
 
 	
@@ -57,7 +62,7 @@ completionHandler(UNNotificationPresentationOptionBadge|
 ###
 
 
-这个方法好复杂的说：
+这个方法可分为下面几种:
 
 * 当App在前台，接收到通知时会调用这个方法
 * 当App在后台，点击通知会调用这个方法
@@ -65,9 +70,8 @@ completionHandler(UNNotificationPresentationOptionBadge|
 
 ```
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler {
-    NSLog(@"iOS7及以上系统，收到通知:%@", userInfo);
     completionHandler(UIBackgroundFetchResultNewData);
-    //此处省略一万行需求代码。。。。。。
+    //此处代码。。。。。。
 }
 ```
 
@@ -84,14 +88,13 @@ iOS7以前的回调方法
 
 
 ###他们在iOS8和iOS9中共同点是：注册成功和注册失败都会回调这两个方法
+
 ```-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error```
 ```-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken```
 
 
-###在App关闭中，会调用哪些方法呢？突然觉得推送好复杂
+###在App关闭中，会调用哪些方法呢？
 
-
-#现在还没搞清楚的一点就是：
 在App关闭的时候，收到通知会怎么调用方法？
 
 
