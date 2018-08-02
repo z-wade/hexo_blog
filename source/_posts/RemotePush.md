@@ -44,12 +44,15 @@ completionHandler(UNNotificationPresentationOptionBadge|
 
 这个方法是点击通知会回调到这里：无论App在前台或者是后台，无论是本地通知还是远程通知都会回调到这里
 
-`- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler`
+```
+- (void)userNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(void (^)())completionHandler
+
+```
 
 	
 
 
-####iOS 8〜9
+#### iOS 8〜9
 
 ```
 + (void)registerRemoteNotificationForIOS8{
@@ -59,8 +62,6 @@ completionHandler(UNNotificationPresentationOptionBadge|
     [[UIApplication sharedApplication] registerUserNotificationSettings:settings];
 }
 ```
-###
-
 
 这个方法可分为下面几种:
 
@@ -76,7 +77,7 @@ completionHandler(UNNotificationPresentationOptionBadge|
 ```
 
 
-###上面说的都是关于普通的消息，下面关于透传的消息
+### 上面说的都是关于普通的消息，下面关于透传的消息
 
 1这个就是透传的回调方法，经实验在iOS10中会也回调到这里。而且还有一个，就是如果没实现这个方法，它会回调到上面iOS7以前的那个回调方法上
 
@@ -87,16 +88,10 @@ iOS7以前的回调方法
 `- (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo`
 
 
-###他们在iOS8和iOS9中共同点是：注册成功和注册失败都会回调这两个方法
+### 他们在iOS8和iOS9中共同点是：注册成功和注册失败都会回调这两个方法
 
 ```-(void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error```
 ```-(void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken```
-
-
-###在App关闭中，会调用哪些方法呢？
-
-在App关闭的时候，收到通知会怎么调用方法？
-
 
 
 
