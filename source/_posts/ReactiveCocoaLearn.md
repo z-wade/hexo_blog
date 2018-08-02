@@ -29,7 +29,9 @@ ReactiveCocoa一直在各大名博上面推荐，今天我找个时间特意学�
 [函数式编程初探（作者：阮一峰）](http://www.ruanyifeng.com/blog/2012/04/functional_programming.html)
 
 [函数式编程 (作者：陈皓)](http://coolshell.cn/articles/10822.html)
+
 # 简单例子
+
 学习ReactiveCocoa之前，我们先了解它是怎么运作的。很明显它是通过扩展的观察者模式（也叫订阅者模式）实现的。
 
 首先，我们会有一个可以发放信号的对象（RACSignal），用于发送信号。有这个号信号，那么可以订阅一些事件了，也就是说，发出信号执行什么操作。
@@ -38,7 +40,7 @@ OK，大概了解了ReactiveCocoa的运作方式，下面看一段小代码。
 
 	    RACSignal *racsignal = [RACSignal createSignal:
                             ^RACDisposable *(id<RACSubscriber> subscriber) {
-                            
+
                             	//发送信号
                             	[subscriber sendNext:@" 信号 1 "];
                                 [subscriber sendCompleted];
@@ -49,7 +51,7 @@ OK，大概了解了ReactiveCocoa的运作方式，下面看一段小代码。
     	[racsignal subscribeNext:^(id x) {
        		 NSLog(@"接收到信号 || ：%@",x);
     	}];
-    	
+
 很简单的小例子，但并不会让人察觉ReactiveCocoa的强大之处。
 #
 
