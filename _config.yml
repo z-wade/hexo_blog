@@ -6,9 +6,9 @@
 title: CJZ's Blog
 subtitle: 回忆昨天，珍惜今天，期待明天
 description:
-author: Chen Jz
+author: ChenJz
 language: zh-CN
-timezone:
+timezone: 
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
@@ -69,9 +69,17 @@ theme: maupassant
 ## Docs: http://hexo.io/docs/deployment.html
 deploy:
   type: git
-  #https://github.com/xiaozhi/xiaozhi.github.io.git
   repo: https://github.com/xiaozhi/xiaozhi.github.io.git
   branch: master
 
-# 多说
-duoshuo_shortname: cjzblog
+# valine
+valine: ## https://valine.js.org
+  enable: true 
+  app_id: jD81kMs0EWXYG1Qkk4BDDH7V-gzGzoHsz
+  app_key: 7kyaiSlreU1h0jiDCtxgtJB8
+  notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
+  verify: false ## Validation code.
+  placeholder: Just so so ## Comment box placeholders.
+  avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
+  pageSize: 10 ## Number of comments per page.
+  guest_info: nick,mail,link ## Attributes of reviewers.
