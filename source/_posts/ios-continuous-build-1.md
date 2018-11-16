@@ -1,3 +1,13 @@
+title: iOS持续集成（一）——fastlane 使用
+
+date: 2018-09-02 17:56:31
+
+tags:
+
+- Fastlane 
+- 自动构建
+
+---
 
 ### 开篇
 
