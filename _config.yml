@@ -71,15 +71,3 @@ deploy:
   type: git
   repo: https://github.com/xiaozhi/xiaozhi.github.io.git
   branch: master
-
-# valine
-valine: ## https://valine.js.org
-  enable: true 
-  appid: jD81kMs0EWXYG1Qkk4BDDH7V-gzGzoHsz
-  appkey: 7kyaiSlreU1h0jiDCtxgtJB8
-  notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
-  verify: false ## Validation code.
-  placeholder: Just so so ## Comment box placeholders.
-  avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
-  pageSize: 10 ## Number of comments per page.
-  guest_info: nick,mail,link ## Attributes of reviewers.
