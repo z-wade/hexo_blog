@@ -75,8 +75,8 @@ deploy:
 # valine
 valine: ## https://valine.js.org
   enable: true 
-  app_id: jD81kMs0EWXYG1Qkk4BDDH7V-gzGzoHsz
-  app_key: 7kyaiSlreU1h0jiDCtxgtJB8
+  appid: jD81kMs0EWXYG1Qkk4BDDH7V-gzGzoHsz
+  appkey: 7kyaiSlreU1h0jiDCtxgtJB8
   notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
   verify: false ## Validation code.
   placeholder: Just so so ## Comment box placeholders.

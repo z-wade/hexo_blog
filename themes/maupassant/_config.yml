@@ -1,5 +1,4 @@
 fancybox: true ## If you want to use fancybox please set the value to true.
-duoshuo: ## Your duoshuo_shortname, e.g. username
 disqus: ## Your disqus_shortname, e.g. username
 google_search: true ## Use Google search, true/false.
 baidu_search: ## Use Baidu search, true/false.
@@ -12,6 +11,16 @@ show_category_count: false ## If you want to show the count of categories in the
 shareto: true ## If you want to use the share button please set the value to true.
 busuanzi: true ## If you want to use Busuanzi page views please set the value to true.
 widgets_on_small_screens: false ## Set to true to enable widgets on small screens.
+valine: ## https://valine.js.org
+  enable: true 
+  appid: jD81kMs0EWXYG1Qkk4BDDH7V-gzGzoHsz
+  appkey: 7kyaiSlreU1h0jiDCtxgtJB8
+  notify: false ## Mail notifier, see https://github.com/xCss/Valine/wiki/Valine-评论系统中的邮件提醒设置
+  verify: false ## Validation code.
+  placeholder: Just so so ## Comment box placeholders.
+  avatar: 'mm' ## Gravatar type, see https://github.com/xCss/Valine/wiki/avatar-setting-for-valine
+  pageSize: 10 ## Number of comments per page.
+  guest_info: nick,mail,link ## Attributes of reviewers.
 
 menu:
   - page: home
